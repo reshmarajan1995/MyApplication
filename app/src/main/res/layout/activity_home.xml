@@ -14,10 +14,46 @@
         android:text="HOME PAGE"
         android:textAlignment="center"/>
 
+    <TextView
+        android:id="@+id/textNoti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"/>
+
     <Button
         android:id="@+id/Viewelep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View Elephant Details" />
+    <Button
+        android:id="@+id/ViewAcce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Accessories  Details" />
+    <Button
+        android:id="@+id/pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pay Now" />
+
+    <Button
+        android:id="@+id/vdoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Doctor" />
+
+    <Button
+        android:id="@+id/fesdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View FestDetails" />
+
+
+
+    <!--android:id="@+id/book"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Book" />-->
 
 </LinearLayout>

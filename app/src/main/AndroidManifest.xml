@@ -2,27 +2,40 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pop.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/elephant_icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        android:theme="@style/AppTheme"> <activity android:name=".LoginActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
+
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".Customerregistration"></activity>
+        </intent-filter>
+        </activity>
+        <activity android:name=".Customerregistration" />
         <activity android:name=".elephantownerregistration" />
         <activity android:name=".accessoryownerregistration" />
         <activity android:name=".fansassociationregistration" />
-        <activity android:name=".Viewelephantdetails" />
+        <!--<activity android:name=".Viewelephantdetails" />-->
+        <activity android:name=".ElephantBooking" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".Viewelepdetail">
-
-        </activity>
+        <activity android:name=".Viewelepdetail" />
+        <activity android:name=".ElepOwnerAcivity" />
+        <activity android:name=".AdminhomeActivity" />
+        <activity android:name=".CustomerhomeActivity" />
+        <activity android:name=".AcceOwnerhomeActicity" />
+        <activity android:name=".FanshomeActivity" />
+        <activity android:name=".DocterhomeActivity" />
+        <activity android:name=".ViewDoctorDetails" />
+        <activity android:name=".ViewAccDetails" />
+        <activity android:name=".CardActivity" />
+        <activity android:name=".ViewElephantBookingsByFans"></activity>
     </application>
+
 
 </manifest>

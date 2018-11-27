@@ -11,10 +11,15 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText username,pawd;
@@ -30,9 +35,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         pawd=(EditText)findViewById(R.id.loginpwdEditText);
         login=(Button)findViewById(R.id.loginButton);
         login.setOnClickListener(this);
-        Intent j1= getIntent();
-        Newreg=(Button)findViewById(R.id.reg);
-        Newreg.setOnClickListener(this);
 
     }
 
@@ -40,7 +42,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         user=username.getText().toString();
         pass=pawd.getText().toString();
-        if (view.getId()==R.id.loginButton) {
+        if (view==login) {
             selectData sdata = new selectData();
             sdata.execute(user, pass);
 
@@ -48,10 +50,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //Intent in = new Intent(this, LoginActivity.class);
             //new HomeActivity(in);
             //Toast.makeText(this, "Login Successfully", Toast.LENGTH_LONG).show();
-        }
-        else{
-
-
         }
 
     }
@@ -70,13 +68,71 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(LoginActivity.this,"Login Successfull"+s, Toast.LENGTH_LONG).show();
-            sh=getSharedPreferences("My data", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor=sh.edit();
-            editor.putString("ID",s);
-            editor.commit();
-            Intent in =new Intent(LoginActivity.this,HomeActivity.class);
-            startActivity(in);
+            Log.d("alliswell",s);
+            Toast.makeText(LoginActivity.this, "hii..Welcome"+s, Toast.LENGTH_SHORT).show();
+            try {
+                JSONArray j = new JSONArray(s);
+                JSONObject jo = j.getJSONObject(0);
+                String  id=jo.getString("id");
+                String type=jo.getString("usertype");
+
+                if(type.equals("admin")){
+                  SharedPreferences sp=getSharedPreferences("my_data",MODE_PRIVATE);
+                  SharedPreferences.Editor editor=sp.edit();
+                  editor.putString("admin_id",id);
+                  Intent Intent=new Intent(LoginActivity.this,AdminhomeActivity.class);
+                  startActivity(Intent);
+
+                }
+                else if(type.equals("elepowner")){
+                    SharedPreferences sp=getSharedPreferences("my_data",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sp.edit();
+                    editor.putString("own_id",id);
+                    Intent Intent=new Intent(LoginActivity.this,ElepOwnerAcivity.class);
+                    startActivity(Intent);
+
+                }
+                else if (type.equals("acceowner")){
+                    SharedPreferences sp=getSharedPreferences("my_data",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sp.edit();
+                    editor.putString("acceown_id",id);
+                    Intent Intent=new Intent(LoginActivity.this,AcceOwnerhomeActicity.class);
+                    startActivity(Intent);
+
+                }
+                else if(type.equals("customer")){
+                    SharedPreferences sp=getSharedPreferences("my_data",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sp.edit();
+                    editor.putString("cust_id",id);
+                    Intent Intent=new Intent(LoginActivity.this,HomeActivity.class);
+                    startActivity(Intent);
+
+
+                }
+                else if(type.equals("fans")){
+                    SharedPreferences sp=getSharedPreferences("my_data",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sp.edit();
+                    editor.putString("fans_id",id);
+                    Intent Intent=new Intent(LoginActivity.this,ViewElephantBookingsByFans.class);
+                    startActivity(Intent);
+
+
+
+                }
+                else if (type.equals("docter")){                    SharedPreferences sp=getSharedPreferences("my_data",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sp.edit();
+                    editor.putString("docter_id",id);
+                    Intent Intent=new Intent(LoginActivity.this,DocterhomeActivity.class);
+                    startActivity(Intent);
+
+
+                }
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
 
         }
 

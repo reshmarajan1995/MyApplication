@@ -23,8 +23,8 @@ final public class WebServiceCaller {
 
 
     public void setSoapObject(String methodName) {
-        request = new SoapObject("http://webservice/", methodName);
-        url = "http://192.168.43.233:8084/e4elephant/elephantwebservice";
+        request = new SoapObject("http://newpackage/", methodName);
+        url = "http://192.168.43.233:8084/myelephant/NewWebService";
     }
 
     public void addProperty(String key, Object value){

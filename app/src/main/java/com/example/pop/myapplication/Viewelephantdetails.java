@@ -74,14 +74,14 @@ public abstract class Viewelephantdetails extends AppCompatActivity {
                     Beanelephant bobj = new Beanelephant();
                     bobj.setElephantname(elephnatname[i]);
                     bobj.setElephantheight(elephantheight[i]);
-                    bobj.setElephantheight(elephantheight[i]);
+                    bobj.setElephantrate(elephantrate[i]);
                     bobj.setElephantphoto(elephantphoto[i]);
                     bobj.setElephantownername(elephantownername[i]);
                     beanlist.add(bobj);
                 }
-                Adapterelephant ada = new Adapterelephant(beanlist, Viewelephantdetails.this);
-                rcv.setLayoutManager(new LinearLayoutManager(Viewelephantdetails.this));
-                rcv.setAdapter(ada);
+//                Adapterelephant ada = new Adapterelephant(beanlist, Viewelephantdetails.this);
+//                rcv.setLayoutManager(new LinearLayoutManager(Viewelephantdetails.this));
+//                rcv.setAdapter(ada);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

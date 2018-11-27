@@ -1,6 +1,9 @@
 package com.example.pop.myapplication;
 
-public class Beanelephant {
+import android.util.Log;
+import android.widget.Toast;
+
+public class Beanelephant extends Beanaccessories {
     String id;
     String elephantname;
     String elephantheight;
@@ -31,6 +34,7 @@ public class Beanelephant {
     public String setElephantrate(String elephantrate)
     {
         this.elephantrate=elephantrate;
+        Log.d("alliswellrate",elephantrate);
         return elephantrate;
     }
     public String setElephantheight(String elephantheight)
@@ -53,6 +57,7 @@ public class Beanelephant {
     }
 
     public String getElephantrate() {
+
         return elephantrate;
     }
 

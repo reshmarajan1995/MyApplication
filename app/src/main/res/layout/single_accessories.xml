@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/elepphoto"
-        android:layout_width="120dp"
-        android:layout_height="220dp"
+        android:id="@+id/accephoto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
         app:srcCompat="@android:drawable/arrow_up_float"
         tools:layout_editor_absoluteX="34dp"
         tools:layout_editor_absoluteY="91dp" />
 
     <TextView
-        android:id="@+id/elepname"
+        android:id="@+id/accename"
         android:layout_width="wrap_content"
         android:layout_height="37dp"
         android:layout_alignStart="@+id/elepheight"
-        android:hint="elephnatname"
+        android:hint="accessoriesname"
         android:layout_alignLeft="@+id/elepheight" />
 
     <TextView
-        android:id="@+id/elepheight"
+        android:id="@+id/accesrate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/elepphoto"
-        android:layout_alignLeft="@+id/elepphoto"
-        android:layout_alignStart="@+id/elepphoto"
-        android:hint="elephantheight"
+        android:layout_alignBottom="@+id/accephoto"
+        android:layout_alignLeft="@+id/accephoto"
+        android:layout_alignStart="@+id/accephoto"
+        android:hint="acceessoriesrate"
         />
 
-    <TextView
-        android:id="@+id/elepownname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/elepname"
-        android:layout_alignStart="@+id/elepname"
-        android:hint="elephantownername"
-        />
+
 
     <TextView
-        android:id="@+id/eleprate"
+        android:id="@+id/accecount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/elepname"
+        android:layout_alignEnd="@+id/acccename"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/elepname"
+        android:layout_alignRight="@+id/accename"
 
-        android:hint="elephantrate"
+        android:hint="accecount"
         />
+    <TextView
+        android:id="@+id/acceownname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/accename"
+        android:layout_alignStart="@+id/accename"
+        android:hint="accessoriesownername"
+        />
+
 </LinearLayout>
